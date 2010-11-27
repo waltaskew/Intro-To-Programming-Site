@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>{% block title %}{% endblock %}</title>
+<link href="/site_media/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="header">
+<div class="header_interior">
+  <img src="/site_media/images/logo.gif" alt="Logo" width="44" height="44" style="float:left; margin-right:10px;" /> 
+  <h1 class="title">Programming Heroes</h1></div>
+  </div>
+  <div class="content_body">
+  <div class="content_interior">
+  <div class="left_column">
+  <div class="navigation">
+    <ul class="markermenu">
+      <li class="markermenu"><a href="/problems">Problems</a></li>
+      <li class="markermenu"><a href="#" style="border-bottom-width: 0">About</a></li>		
+    </ul>
+  </div>
+
+  <div class="navigationbtm"></div>
+  <br />
+  </div>
+  <div class="right_column">
+    {% block content %}{% endblock %}
+  </div>
+  </div>
+  <br clear="all" />
+  </div>
+  <div class="footer">
+  <div class="footer-inner">
+  <div style="text-align:center;">Copyright &copy; 2010 Walt Askew
+  </div>
+  </div clear="all">
+ </div>
+ </body>
+ </html>

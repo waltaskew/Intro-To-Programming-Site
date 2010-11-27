@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Problems{% endblock %}
+
+{% block content %}
+{% for problem in problems %}
+    <h2><a href="/problems/{{ problem.id }}/">{{ problem }}</a></h2>
+    <p>{{ problem.description }}</p>
+    {% if not forloop.last %}
+    <div class="hr"></div>
+    {% endif %}
+    {% empty %}
+    <p>No problems available.</p>
+{% endfor %}
+{% endblock %}

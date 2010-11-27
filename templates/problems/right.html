@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ problem }}{% endblock %}
+
+{% block content %}
+<h1>{{ problem }}</h1>
+<p>
+You're right!
+</p>
+<p>
+<a href="{% url problems_index %}">Return to problems index.</a>
+</p>
+{% endblock %}

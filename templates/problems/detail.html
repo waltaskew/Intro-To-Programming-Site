@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ problem }}{% endblock %}
+
+{% block content %}
+<h1>{{ problem }}</h1>
+<p>
+{{ problem.description }}
+</p>
+<p>
+<form action="" method="post">{% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+</p>
+{% endblock %}
