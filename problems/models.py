@@ -9,8 +9,13 @@ class Problem(InheritanceCastModel):
     number = models.DecimalField(max_digits=4, decimal_places=3)
     difficulty = models.IntegerField(null=True, blank=True)
     description = models.TextField()
+    errata = models.FileField(upload_to='program_descriptions',
+            null=True, blank=True)
     created = models.DateField(auto_now_add=True)
 
+    class Meta:
+        ordering = ('number', 'title')
+    
     def __unicode__(self):
         """String representation of the instance.
         """
@@ -32,7 +37,5 @@ class Program(Problem):
     """A problem which requires the user to upload a program 
     they have written.
     """
-    errata = models.FileField(upload_to='program_descriptions',
-            null=True, blank=True)
     tester = models.FileField(upload_to='program_testers', 
             null=True, blank=True)

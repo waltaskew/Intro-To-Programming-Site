@@ -4,7 +4,12 @@
 
 {% block content %}
 {% for problem in problems %}
-    <h2><a href="/problems/{{ problem.id }}/">{{ problem }}</a></h2>
+    {% if problem in answered_problems %}
+        <h2 class="solved">
+    {% else %}
+        <h2 class="unsolved">
+    {% endif %}
+    <a href="/problems/{{ problem.id }}/">{{ problem }}</a></h2>
     <p>{{ problem.description }}</p>
     {% if not forloop.last %}
     <div class="hr"></div>

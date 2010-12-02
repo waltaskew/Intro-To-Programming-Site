@@ -7,6 +7,10 @@ ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
 
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+
+REGISTRATION_SECRET = 'foo'
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -32,6 +36,8 @@ TIME_ZONE = 'America/Chicago'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
+
+LOGIN_REDIRECT_URL = '/problems/'
 
 SITE_ID = 1
 
@@ -88,5 +94,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'accounts',
     'problems',
 )
