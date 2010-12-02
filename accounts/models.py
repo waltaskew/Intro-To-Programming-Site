@@ -47,9 +47,3 @@ class Answer(models.Model):
     problem = models.ForeignKey(Problem)
     answered_by = models.ForeignKey(User)
     program = models.FileField(upload_to=get_path, null=True, blank=True)
-
-
-
-
-
-
