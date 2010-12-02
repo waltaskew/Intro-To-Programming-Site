@@ -17,6 +17,11 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     total_answered = models.IntegerField()
 
+    def __unicode__(self):
+        """String representation of the instance.
+        """
+        return 'User Profile for %s' % self.user
+
     def add_answer(self, problem, program=None):
         """Add an answer to a problem for the user.
         """
@@ -47,3 +52,8 @@ class Answer(models.Model):
     problem = models.ForeignKey(Problem)
     answered_by = models.ForeignKey(User)
     program = models.FileField(upload_to=get_path, null=True, blank=True)
+
+    def __unicode__(self):
+        """String representation of the instance.
+        """
+        return '%s answered by %s' % (self.problem, self.answered_by)
