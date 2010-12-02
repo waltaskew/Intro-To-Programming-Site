@@ -1,5 +1,5 @@
-from accounts.models import UserProfile, Answer
+from problems.models import Question, Program
 from django.contrib import admin
 
-admin.site.register(UserProfile)
-admin.site.register(Answer)
+admin.site.register(Question)
+admin.site.register(Program)
