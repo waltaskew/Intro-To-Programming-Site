@@ -21,6 +21,7 @@ def detail(request, pk, template_name=None):
     """Display the problem and handle the user's answer.
     """
     problem = get_object_or_404(Problem, pk=pk).cast()
+    is_answered = request.user.get_profile().is_answered(problem)
     if request.method == 'POST':
         form = problem.get_form(request.POST)
         if form.is_valid():
@@ -31,6 +32,7 @@ def detail(request, pk, template_name=None):
 
     return render_to_response(template_name,
                               {'problem': problem,
+                               'is_answered': is_answered,
                                'form': form},
                               context_instance=RequestContext(request))
 
