@@ -33,15 +33,15 @@ def login(username, password):
     """
     user = authenticate(username=username, password=password)
     if user is None:
-        return 0, 0
+        return 0
     else:
-        return user.id, user.get_profile().secret_key
+        return user.get_profile().secret_key
 
-def add_answer(secret_key, user_id, problem_id):
+def add_answer(secret_key, username, problem_id):
     """Record a correct answer for the problem with id problem_id
-    on behalf of username.
+    on behalf of the user with id user_id.
     """
-    user = User.objects.get(pk=user_id)
+    user = User.objects.get(username=username)
     profile = user.get_profile()
     if profile.secret_key == secret_key:
         problem = Problem.objects.get(pk=problem_id)
