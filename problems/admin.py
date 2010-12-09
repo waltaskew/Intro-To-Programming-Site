@@ -1,5 +1,4 @@
-from problems.models import Question, Program
+from problems.models import Problem
 from django.contrib import admin
 
-admin.site.register(Question)
-admin.site.register(Program)
+admin.site.register(Problem)

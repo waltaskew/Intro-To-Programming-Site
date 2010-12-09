@@ -37,7 +37,7 @@ class UserProfile(models.Model):
     def get_answered_problems(self):
         """Return the problems that the user has answered.
         """
-        return Problem.objects.all().filter(answer__answered_by=self)
+        return Problem.objects.all().filter(given_answer__answered_by=self)
 
     def is_answered(self, problem):
         """Return a boolean idicating whether a given problem
@@ -56,7 +56,7 @@ class Answer(models.Model):
     """An answer to a question.
     """
     created = models.DateField(auto_now=True, auto_now_add=True)
-    problem = models.ForeignKey(Problem)
+    problem = models.ForeignKey(Problem, related_name='given_answer')
     answered_by = models.ForeignKey(UserProfile)
     program = models.FileField(upload_to=get_path, null=True, blank=True)
 

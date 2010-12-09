@@ -9,6 +9,6 @@ class QuestionForm(forms.Form):
         """Check if the value is the answer to the form's problem.
         """
         answer = self.cleaned_data['answer']
-        if answer != self.problem.answer:
+        if answer != self.answer:
             message = 'Nope.  %s is not the right answer.' % answer
             raise forms.ValidationError(message)

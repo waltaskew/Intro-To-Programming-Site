@@ -4,17 +4,17 @@
 
 {% block content %}
 {% for problem in problems %}
-    {% if problem in answered_problems %}
-        <h2 class="solved">
-    {% else %}
-        <h2 class="unsolved">
-    {% endif %}
-    <a href="/problems/{{ problem.id }}/">{{ problem }}</a></h2>
-    <p>{{ problem.description }}</p>
-    {% if not forloop.last %}
+  {% if problem in answered_problems %}
+    <h2 class="solved">
+  {% else %}
+    <h2 class="unsolved">
+  {% endif %}
+  <a href="/problems/{{ problem.id }}/">{{ problem }}</a></h2>
+  <p>{{ problem.description }}</p>
+  {% if not forloop.last %}
     <div class="hr"></div>
-    {% endif %}
-    {% empty %}
-    <p>No problems available.</p>
+  {% endif %}
+{% empty %}
+  <p>No problems available.</p>
 {% endfor %}
 {% endblock %}

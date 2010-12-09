@@ -6,14 +6,26 @@
 <p>
 {{ problem.description }}
 </p>
-<p>
-{% if is_answered %}
-You've already supplied the correct answer, {{ problem.answer }}.
-{% else %}
-<form action="" method="post">{% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit" />
-</form>
+{% if files %}
+  <p>
+  {% for file in files %}
+    {{ file }}
+  {% endfor %}
+  </p>
 {% endif %}
-</p>
+{% if is_answered %}
+  <p>
+  You've answered this one already.  Go you!
+  {% if problem.answer %}
+    <br>The answer was {{ problem.answer }}, remember?
+  {% endif %}
+  </p>
+{% else %} {% if form %}
+  <p>
+  <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+  </form>
+  </p>
+{% endif %}{% endif %}
 {% endblock %}
