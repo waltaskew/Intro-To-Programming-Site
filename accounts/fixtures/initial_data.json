@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "accounts.userprofile", "fields": {"secret_key": "ef19f081340cba1c769520c3dfc44df7", "user": 2, "total_answered": 2}}, {"pk": 1, "model": "accounts.answer", "fields": {"answered_by": 1, "problem": 1, "created": "2010-12-08"}}, {"pk": 2, "model": "accounts.answer", "fields": {"answered_by": 1, "problem": 3, "created": "2010-12-08"}}]
