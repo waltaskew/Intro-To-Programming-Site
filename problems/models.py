@@ -43,3 +43,13 @@ class ProblemFile(models.Model):
     document = models.FileField(upload_to='problems_documents')
     problem = models.ForeignKey(Problem)
     created = models.DateField(auto_now_add=True)
+
+    def __unicode__(self):
+        """Returns a string representation of the instance.
+        """
+        return '%s for %s' % (self.title, self.problem)
+
+    def get_link(self):
+        """Returns a link to the file.
+        """
+        return self.document.url

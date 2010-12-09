@@ -210,3 +210,20 @@ li{
 margin-left:-20px;
 list-style-type:square;
 color:#006699;}
+
+.file {
+    float: left;
+    background:url(/site_media/images/file_icon.gif) no-repeat center top;
+    height: 35px;
+    padding-right: 10px;
+    position: relative;
+}
+.file h6 {
+    width: 100%;
+    font-size: 12px;
+}
+
+h2.nopad{
+    padding: 10px 0px 10px 0px;
+}
+    

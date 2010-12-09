@@ -1,3 +1,4 @@
 *.pyc
 homework.db
 Thumbs.db
+static/uploads

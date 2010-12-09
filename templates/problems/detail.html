@@ -6,13 +6,15 @@
 <p>
 {{ problem.description }}
 </p>
+
 {% if files %}
-  <p>
-  {% for file in files %}
-    {{ file }}
-  {% endfor %}
-  </p>
+ <h2 class="nopad">Attached Files</h2>
+ {% for file in files %}
+    <a href="{{ file.get_link }}"><div class='file'><h6>{{file.title}}</h6></div></a>
+ {% endfor %}
+ <br clear="all" /><br />
 {% endif %}
+    
 {% if is_answered %}
   <p>
   You've answered this one already.  Go you!
