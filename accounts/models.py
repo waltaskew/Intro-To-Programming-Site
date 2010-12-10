@@ -1,5 +1,3 @@
-import random
-
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -11,7 +9,6 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User)
     total_answered = models.IntegerField()
-    secret_key = models.CharField(max_length=32)
 
     def __unicode__(self):
         """String representation of the instance.
@@ -42,8 +39,6 @@ class UserProfile(models.Model):
     def save(self, *args, **kwargs):
         """Initialiaze the created count."""
         if not self.id:
-            random.seed()
-            self.secret_key = '%016x' % random.getrandbits(128)
             self.total_answered = 0
         return super(UserProfile, self).save(*args, **kwargs)
 
