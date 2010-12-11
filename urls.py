@@ -1,6 +1,9 @@
-from django.conf.urls.defaults import *
+import os
 
+from django.conf.urls.defaults import *
 from django.contrib import admin
+
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -13,6 +16,6 @@ urlpatterns = patterns('',
     (r'^accounts/', include('accounts.urls')),
     (r'^xml_rpc_srv/', 'xmlrpc.handler.rpc_handler'),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': '/var/django/homework/static'}),
+        {'document_root': os.path.join(os.path.dirname(__file__), 'static')}),
     (r'^admin/', include(admin.site.urls)),
 )
