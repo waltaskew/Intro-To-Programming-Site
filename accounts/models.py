@@ -27,7 +27,9 @@ class UserProfile(models.Model):
     def get_answered_problems(self):
         """Return the problems that the user has answered.
         """
-        return Problem.objects.all().filter(given_answer__answered_by=self)
+        answers = Answer.objects.all().filter(answered_by=self)
+        problem_ids = answers.values_list('problem', flat=True)
+        return Problem.objects.all().filter(pk__in=list(problem_ids))
 
     def is_answered(self, problem):
         """Return a boolean idicating whether a given problem
