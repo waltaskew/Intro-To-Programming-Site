@@ -1,0 +1,12 @@
+data/.hgignore.i
+data/LICENSE.i
+data/MANIFEST.in.i
+data/README.rst.i
+data/dbindexer/__init__.py.i
+data/dbindexer/api.py.i
+data/dbindexer/base.py.i
+data/dbindexer/compiler.py.i
+data/dbindexer/filter.py.i
+data/dbindexer/models.py.i
+data/dbindexer/tests.py.i
+data/setup.py.i
