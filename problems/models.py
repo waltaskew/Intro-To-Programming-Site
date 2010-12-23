@@ -2,15 +2,27 @@ from django.db import models
 from problems.forms import QuestionForm
 
 
+class ProblemManager(models.Manager):
+    """Custom maanager for the Problem mode.
+    """
+    def actives(self):
+        """Return all active problems.
+        """
+        return self.all().filter(active=True)
+
+
 class Problem(models.Model):
     """Model for problems given to students.
     """
     title = models.CharField(max_length=255)
-    number = models.DecimalField(max_digits=4, decimal_places=3)
+    active = models.BooleanField(default=True)
+    number = models.DecimalField(max_digits=3, decimal_places=2)
     difficulty = models.IntegerField(null=True, blank=True)
     description = models.TextField()
     answer = models.CharField(max_length=255, blank=True)
     created = models.DateField(auto_now_add=True)
+
+    objects = ProblemManager()
     
     class Meta:
         ordering = ('-number', 'title')

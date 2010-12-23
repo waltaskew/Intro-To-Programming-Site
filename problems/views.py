@@ -10,7 +10,7 @@ from problems.models import Problem
 def index(request, template_name=None):
     """Display a list of problems.
     """
-    problems = Problem.objects.all()
+    problems = Problem.objects.actives()
     answered_problems = request.user.get_profile().get_answered_problems()
     answered_problems = dict([(problem, None) for problem in answered_problems])
     return render_to_response(template_name, {'problems': problems,
