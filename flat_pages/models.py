@@ -9,12 +9,12 @@ class FlatPage(models.Model):
     text = models.TextField()
     modified = models.DateField(auto_now=True)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         """Create a slug if one has not been provided.
         """
         if not self.slug:
             self.slug = slugify(self.title)
-        return super(FlatPage, self).save()
+        return super(FlatPage, self).save(*args, **kwargs)
 
     def __unicode__(self):
         """Returns the page's title.
