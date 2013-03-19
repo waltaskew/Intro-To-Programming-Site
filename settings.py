@@ -2,7 +2,7 @@ import dj_database_url
 
 # Django settings for homework project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
