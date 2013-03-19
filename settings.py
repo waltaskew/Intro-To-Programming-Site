@@ -77,7 +77,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'homework.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     '/Users/waltaskew/Programming/Python/django/homework/templates',
