@@ -80,7 +80,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    '/Users/waltaskew/Programming/Python/django/homework/templates',
+    'templates',
 )
 
 INSTALLED_APPS = (
