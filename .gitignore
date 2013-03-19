@@ -4,3 +4,4 @@ dev.db
 Thumbs.db
 static/uploads
 local_settings.py
+initial_data.json
