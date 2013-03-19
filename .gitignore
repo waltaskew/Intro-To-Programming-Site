@@ -1,4 +1,6 @@
+venv
 *.pyc
-homework.db
+dev.db
 Thumbs.db
 static/uploads
+local_settings.py
