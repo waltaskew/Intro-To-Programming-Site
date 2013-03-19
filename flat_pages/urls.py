@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 
 urlpatterns = patterns('flat_pages.views',
         url(r'^(?P<slug>[\w|-]+)/$', 
