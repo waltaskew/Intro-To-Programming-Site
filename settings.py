@@ -98,6 +98,8 @@ INSTALLED_APPS = (
     'flat_pages'
 )
 
+ALLOWED_HOSTS = ['.herokuapp.com']
+
 LOGGING = {
     'version': 1,
     'handlers': {
