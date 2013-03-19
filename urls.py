@@ -14,6 +14,6 @@ urlpatterns = patterns('',
     (r'^pages/', include('flat_pages.urls')),
     (r'^xml_rpc_srv/', 'xmlrpc.handler.rpc_handler'),
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': '/var/django/homework/static'}),
+        {'document_root': 'static'}),
     (r'^admin/', include(admin.site.urls)),
 )
