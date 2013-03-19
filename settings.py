@@ -1,5 +1,6 @@
-import os.path
 import dj_database_url
+import os.path
+import sys
 
 # Django settings for homework project.
 
@@ -97,6 +98,16 @@ INSTALLED_APPS = (
     'flat_pages'
 )
 
+LOGGING = {
+    'version': 1,
+    'handlers': {
+        'console':{
+            'level':'INFO',
+            'class':'logging.StreamHandler',
+            'stream': sys.stderr
+        },
+    }
+}
 
 # Allow any settings to be defined in local_settings.py which should be
 # ignored in your version control system allowing for settings to be
