@@ -1,3 +1,4 @@
+import settings
 from django.conf.urls import *
 
 from django.contrib import admin
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
     (r'^xml_rpc_srv/', 'xmlrpc.handler.rpc_handler'),
     url(r'^static/(?P<path>.*)$',
         'django.views.static.serve',
-        {'document_root': 'static'},
+        {'document_root': settings.STATIC_ROOT},
         name='static'),
     (r'^admin/', include(admin.site.urls)),
 )
