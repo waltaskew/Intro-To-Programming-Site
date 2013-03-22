@@ -51,6 +51,8 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
+DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '3bf8zym9@m)99u%f++vw@&&ijcz6rvp!#fcber4y550y9*tpgh'
 
@@ -83,6 +85,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.staticfiles',
     'accounts',
+    'database_files',
     'problems',
     'flat_pages'
 )
