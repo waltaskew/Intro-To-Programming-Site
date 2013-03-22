@@ -10,7 +10,7 @@
     <h2 class="unsolved">
   {% endif %}
   <a href="/problems/{{ problem.id }}/">{{ problem }}</a></h2>
-  <p>{{ problem.description|truncatewords:40|safe|linebreaks }}</p>
+  <p>{{ problem.description|safe|linebreaks|truncatewords_html:"40" }} </p>
   {% if not forloop.last %}
     <div class="hr"></div>
   {% endif %}
