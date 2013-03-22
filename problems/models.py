@@ -16,7 +16,8 @@ class Problem(models.Model):
     """
     title = models.CharField(max_length=255)
     active = models.BooleanField(default=True)
-    number = models.DecimalField(max_digits=3, decimal_places=2)
+    major_number = models.IntegerField()
+    minor_number = models.IntegerField(default=0)
     difficulty = models.IntegerField(null=True, blank=True)
     description = models.TextField()
     answer = models.CharField(max_length=255, blank=True)
@@ -25,12 +26,12 @@ class Problem(models.Model):
     objects = ProblemManager()
     
     class Meta:
-        ordering = ('-number', 'title')
+        ordering = ('-major_number', 'minor_number', 'title')
     
     def __unicode__(self):
         """Returns a string representation of the instance.
         """
-        return '%s - %s' % (self.number, self.title)
+        return '%s.%s - %s' % (self.major_number, self.minor_number, self.title)
 
     def get_form(self, *args, **kwargs):
         """Return a form to answer the question.
