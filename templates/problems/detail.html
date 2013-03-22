@@ -4,7 +4,7 @@
 {% block content %}
 <h1>{{ problem }}</h1>
 <p>
-{{ problem.description }}
+{{ problem.description|linebreaks }}
 </p>
 
 {% if files %}
